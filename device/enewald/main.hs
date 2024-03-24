@@ -1,20 +1,19 @@
-import Hello (create)
+import Hello (genesis)
 import Utils(createDirectoryIfNotExists)
+import Globals(rootDir, pkgsDir)
 import System.Environment (getArgs)
 
 installPackage :: String -> IO ()
 installPackage packageName = do 
     putStrLn $ "Installing package: " ++ packageName
-    create
+    genesis 
 
 
 main :: IO ()
 main = do
-  let rootDir = "./enewald/"
-  let pkgsDir = "./enewald/pkgs/"
   args <- getArgs
   case args of
-    ["install", packageName] -> installPackage packageName
+    ["build", packageName] -> installPackage packageName
     ["init", arch] -> do 
         createDirectoryIfNotExists rootDir
         createDirectoryIfNotExists pkgsDir 
