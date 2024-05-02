@@ -14,8 +14,9 @@ main = do
   args <- getArgs
   case args of
     ["build", packageName] -> installPackage packageName
-    ["init", arch] -> do 
+    ["buildos", packageName] -> installPackage packageName
+    ["init"] -> do 
         createDirectoryIfNotExists rootDir
         createDirectoryIfNotExists pkgsDir 
-    ["remove", packageName] -> putStrLn $ "Removing package: " ++ packageName
+    ["remove", packageName] -> putStrLn $ "TODO! Removing package: " ++ packageName
     _ -> putStrLn "Invalid command"

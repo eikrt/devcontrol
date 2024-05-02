@@ -3,3 +3,6 @@
 node_modules/
 keys/
 *.db
+pkgs/
+package.json
+package-lock.json
