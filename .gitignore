@@ -6,3 +6,4 @@ keys/
 pkgs/
 package.json
 package-lock.json
+linux*
